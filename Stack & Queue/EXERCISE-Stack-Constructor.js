@@ -4,52 +4,59 @@
 //                       //
 //                       //
 ///////////////////////////
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
 
 class Stack {
-	// WRITE STACK CONSTRUCTOR HERE //
-	//                              //
-	//                              //
-	//                              //
-	//                              //
-	//////////////////////////////////
+  // WRITE STACK CONSTRUCTOR HERE //
+  //                              //
+  //                              //
+  //                              //
+  //                              //
+  //////////////////////////////////
+  constructor(value) {
+    const newNode = new Node(value);
+    this.top = newNode;
+    this.next = null;
+    this.length = 1;
+  }
 
-    printStack() {
-        let temp = this.top;
-        while (temp !== null) {
-            console.log(temp.value);
-            temp = temp.next;
-        }
+  printStack() {
+    let temp = this.top;
+    while (temp !== null) {
+      console.log(temp.value);
+      temp = temp.next;
     }
+  }
 
-    getTop() {
-        if (this.top === null) {
-            console.log("Top: null");
-        } else {
-            console.log("Top: " + this.top.value);
-        }
+  getTop() {
+    if (this.top === null) {
+      console.log("Top: null");
+    } else {
+      console.log("Top: " + this.top.value);
     }
+  }
 
-    getLength() {
-        console.log("Length: " + this.length);
-    }
-
-}
- 
-
- 
- function test() {
-    let myStack = new Stack(4);
-
-    myStack.getTop();
-    myStack.getLength();
-
-    console.log("\nStack:");
-    myStack.printStack();
+  getLength() {
+    console.log("Length: " + this.length);
+  }
 }
 
+function test() {
+  let myStack = new Stack(4);
+
+  myStack.getTop();
+  myStack.getLength();
+
+  console.log("\nStack:");
+  myStack.printStack();
+}
 
 test();
-
 
 /*
     EXPECTED OUTPUT:
@@ -61,4 +68,3 @@ test();
     4
 
 */
- 
